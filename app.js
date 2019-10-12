@@ -48,7 +48,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
  
-app.listen(port,function(){
-   console.log('Server litening port',port)
-})
+// app.listen(port,function(){
+//    console.log('Server litening port',port)
+// })
+app.listen(process.env.PORT || 3000)
 module.exports = app;
