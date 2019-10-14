@@ -1,0 +1,9 @@
+extends ../layouts/layout
+
+block content
+  h2 New Author
+  include ../partials/errMess
+  form(action="/authors" method="POST")
+     include ./form_field
+     a(href="/authors") Cancel
+     button(type="submit") Create

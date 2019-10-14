@@ -1,0 +1,11 @@
+extends ../layouts/layout
+
+block content
+  h2 Search Authors
+  form(action="/authors" method="GET")
+    label(for="name") Name
+    input(type="text" name="name" value=searchOptions.name)
+    button(type="submit") Search
+  br
+  each author in authors
+    div= author.name
