@@ -5,6 +5,8 @@ html
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
+    link(href='https://unpkg.com/filepond/dist/filepond.css', rel='stylesheet')
+    link(href='https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css', rel='stylesheet')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
@@ -12,5 +14,10 @@ html
     block content
     
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js')
+    script(src='https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js')
+    script(src='https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js')
+    script(src='https://unpkg.com/filepond/dist/filepond.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js')
+    script(src='/javascripts/fileUpload.js')
     
