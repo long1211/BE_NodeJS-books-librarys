@@ -1,0 +1,9 @@
+extends ../layouts/layout
+
+block content
+  include ../partials/errMess
+  h2 Edit Author
+  form(method="POST" action="/authors/" + author.id + "?_method=PUT")
+     include ./form_field
+     a(href="/authors/" + author.id) Cancel
+     button(type="submit") Update

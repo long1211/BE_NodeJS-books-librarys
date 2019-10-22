@@ -1,0 +1,15 @@
+extends ../layouts/layout
+
+block content
+  h2= author.name
+  a(href='/authors/'+author.id +'/edit') Edit
+  include ../partials/deleteForm  
+  if booksByAuthor.length > 0
+   h2 Books By Author
+   each book in booksByAuthor
+      img(height='150' width='100' src=book.coverImgpath)
+      h2= book.title
+      p= book.description
+      strong='Page Count: ' + book.pageCount
+      br
+      span='Publish Date: ' + book.publishDate.toISOString().split('T')[0]

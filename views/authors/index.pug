@@ -9,3 +9,7 @@ block content
   br
   each author in authors
     div= author.name
+    a(href='/authors/'+ author.id) View
+    a(href='/authors/'+author.id +'/edit') Edit
+    include ../partials/deleteForm  
+              

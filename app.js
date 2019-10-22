@@ -7,6 +7,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser')
+var methodOverride = require('method-override')
 
 var indexRouter = require('./routes/index');
 var authorRouter = require('./routes/author');
@@ -31,6 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ limit:'10mb' ,extended: false }));
+app.use(methodOverride('_method'))
 
 app.use('/', indexRouter);
 app.use('/authors', authorRouter);
