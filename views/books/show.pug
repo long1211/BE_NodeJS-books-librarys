@@ -1,0 +1,19 @@
+extends ../layouts/layout
+
+block content
+   include ../partials/errMess
+  
+   img(height='150' width='100' src=book.coverImgpath)
+   h2= book.title
+   div Author: 
+       =book.author.name
+   div Publish Date: 
+       =book.publishDate.toDateString()
+   div Page Count: 
+       =book.pageCount
+   div Description: 
+       =book.description
+   a(href='/books/'+ book.id +'/edit') Edit
+   form(method="POST" action="/books/" + book.id + "?_method=DELETE")
+       button(type='submit') Delete            
+   a(href='/authors/'+book.author.id) View Author

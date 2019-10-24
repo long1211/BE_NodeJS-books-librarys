@@ -7,9 +7,5 @@ block content
   if booksByAuthor.length > 0
    h2 Books By Author
    each book in booksByAuthor
+    a(href='/books/'+book.id)
       img(height='150' width='100' src=book.coverImgpath)
-      h2= book.title
-      p= book.description
-      strong='Page Count: ' + book.pageCount
-      br
-      span='Publish Date: ' + book.publishDate.toISOString().split('T')[0]

@@ -15,4 +15,5 @@ block content
       button(type="submit") Search
     div
       each book in books
+       a(href='/books/'+book.id)
         img( width='100px', height='150px',src=book.coverImgpath)

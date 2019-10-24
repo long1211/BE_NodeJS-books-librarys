@@ -13,7 +13,7 @@ div
     label(for="publish date") Publish Date
     input(type="date" name="publishDate" 
                 value= book.publishDate == null ? '' :
-                book.publishDatetoISOString().split('T')[0])
+                book.publishDate.toISOString().split('T')[0])
 div
     label(for="page count") Page Count 
     input(type="number" name="pageCount" min="1" value= book.pageCount )                

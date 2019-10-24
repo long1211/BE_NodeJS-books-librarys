@@ -2,4 +2,5 @@ extends layouts/layout
 block content
    div
       each book in books
+       a(href='/books/'+book.id)
         img( width='100px', height='150px',src=book.coverImgpath)

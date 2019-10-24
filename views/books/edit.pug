@@ -1,0 +1,9 @@
+extends ../layouts/layout
+
+block content
+  include ../partials/errMess
+  h2 Edit Books
+  form( action="/books/" + book.id + "?_method=PUT" method="POST")
+     include ./form_field
+     a(href="/books") Cancel
+     button(type="submit") Update
