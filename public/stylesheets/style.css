@@ -1,8 +1,137 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: cursive;
+  
+}
+*{
+  padding: 0;
+  margin:0;
+}
+.search-author{
+  font-size:35px;
+  text-align:center;
+}
+.form-search{
+  position: relative;
+}
+.btn_{
+  position: absolute;
+  top: 50%;
+  left: 75%;
+}
+.name{
+  display: inline-block;
+  font-size: 17px;
+}
+.author{
+  float: left;
+    margin: 10px 18px;
+}
+.edit_{
+  display:flex;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #777;
+  font-size: 16px;
 }
 
-a {
-  color: #00B7FF;
+._btn {
+  margin-top:10px;
+  display: flex;
+  justify-content: flex-end;
 }
+
+.margin-top{
+  margin-top: 55px;
+}
+.margin-top_{
+  margin-top: 25px;
+}
+.show-books{
+  font-size: 16px;
+}
+.img-book{
+  height: 230px;
+  width: 200px;
+}
+.img{
+  width: 100%;
+  height: 280px;
+}
+.form-item{
+  display: flex;
+  flex-direction:column;
+  flex-grow: 1;
+  flex-basis: 0;
+
+}
+.form-{
+  width:95%;
+}
+._form{
+  width:60%
+}
+.form-row {
+  margin-bottom: 10px;
+  display: flex;
+}
+.lb-book{
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.form-item textarea{
+  resize: none;
+  height: 100%;
+}
+.form-item.no-grow{
+  flex-grow: 0;
+}
+.filepond--root{
+  margin-bottom: 0;
+}
+.book-cover{
+  height: 215px;
+  width: 200px;
+  margin-right: 80px;
+  margin-bottom: 0;
+}
+.flex-end{
+  display: flex;
+  padding: 0px 18% 0 0;
+  justify-content: flex-end;
+}
+.filepond--root *:not(text) {
+  font-size: 13px;
+}
+@media only screen and (min-width:240px) and (max-width:480px){
+  .title-search{
+    position: absolute;
+    left: 17%;
+  }
+  .img-book{
+    height: 230px;
+    width: 160px;
+  }
+  .img{
+    width: 160px;
+    height: 220px;
+  }
+  ._form{
+    width:95%;
+  }
+  .book-cover{
+    height: 100px;
+    width: 150px;
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+  .flex-end{
+    display: flex;
+    padding: 0;
+    justify-content: flex-end;
+  }
+  
+}
+/* height: 215px;
+    width: 180px;
+    margin-right: 80px;
+    margin-bottom: 0; */

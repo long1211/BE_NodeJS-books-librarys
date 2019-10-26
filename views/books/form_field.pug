@@ -1,25 +1,31 @@
-div
-    label(for="name") Title
-    input(type="text" name="title" value=book.title)
-div   
-    label(for="author") Author
-    select(name="author")
-     each author in authors 
-        if author.id === book.author
-         option(selected label=author.name, value=author.id)
-        else
-         option( label=author.name, value=author.id)
-div
-    label(for="publish date") Publish Date
-    input(type="date" name="publishDate" 
-                value= book.publishDate == null ? '' :
-                book.publishDate.toISOString().split('T')[0])
-div
-    label(for="page count") Page Count 
-    input(type="number" name="pageCount" min="1" value= book.pageCount )                
-div
-    label(for="coverImg") Cover
-    input(type="file" name="cover" class="filepond")                
-div
-  label(for="description") Description
-  textarea(name="description", book.description)    
+div.form-row
+    div.form-item
+        label.lb-book(for="name" ) Title
+        input.form-control._form(placeholder="Title", type="text" name="title" value=book.title)
+  
+    div.form-item   
+        label.lb-book(for="author") Author
+        select.form-control._form(name="author")
+          each author in authors 
+            if author.id === book.author
+              option(selected label=author.name, value=author.id)
+            else
+              option( label=author.name, value=author.id)
+div.form-row
+    div.form-item
+        label.lb-book(for="publish date") Publish Date
+        input.form-control._form(type="date" name="publishDate" 
+                    value= book.publishDate == null ? '' :
+                    book.publishDate.toISOString().split('T')[0])
+
+    div.form-item
+        label.lb-book(for="page count") Page Count 
+        input.form-control._form(placeholder="Page Count",type="number" name="pageCount" min="1" value= book.pageCount )                
+div.form-row
+    div.form-item.no-grow
+        label.lb-book(for="coverImg") Cover
+        input(type="file" name="cover" class="book-cover filepond" )                
+  
+    div.form-item
+      label.lb-book(for="description") Description
+      textarea.form-control._form(name="description", book.description)    

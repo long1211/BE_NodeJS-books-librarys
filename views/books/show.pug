@@ -1,19 +1,25 @@
 extends ../layouts/layout
 
 block content
-   include ../partials/errMess
-  
-   img(height='150' width='100' src=book.coverImgpath)
-   h2= book.title
-   div Author: 
+ div.container
+  include ../partials/errMess
+  .col-md-4.col-sm-4.col-lg-4
+  .col-md-5.col-sm-5.col-lg-5 
+   .col-md-6.col-sm-6.col-lg-6.col-xs-6.margin-top_(style='padding: 0;')
+    img(class='img-book' src=book.coverImgpath)
+   .col-md-6.col-sm-6.col-lg-6.col-xs-6(style='padding: 0;')
+    h2= book.title
+    div.show-books Author: 
        =book.author.name
-   div Publish Date: 
+    div.show-books Publish Date: 
        =book.publishDate.toDateString()
-   div Page Count: 
+    div.show-books Page Count: 
        =book.pageCount
-   div Description: 
+    div.show-books Description: 
        =book.description
-   a(href='/books/'+ book.id +'/edit') Edit
-   form(method="POST" action="/books/" + book.id + "?_method=DELETE")
-       button(type='submit') Delete            
-   a(href='/authors/'+book.author.id) View Author
+    div(style='display:flex')    
+     a(href='/books/'+ book.id +'/edit',style='text-decoration: none; padding: 0 5px; font-size: 16px;line-height: 2;') Edit
+     form(method="POST" action="/books/" + book.id + "?_method=DELETE")
+       button.btn.btn-danger(type='submit') Delete            
+    a(href='/authors/'+book.author.id, style='text-decoration: none; padding: 0 5px; font-size: 16px;') View Author
+  .col-md-3.col-sm-3.col-lg-3  

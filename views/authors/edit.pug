@@ -1,9 +1,13 @@
 extends ../layouts/layout
 
 block content
-  include ../partials/errMess
-  h2 Edit Author
-  form(method="POST" action="/authors/" + author.id + "?_method=PUT")
-     include ./form_field
-     a(href="/authors/" + author.id) Cancel
-     button(type="submit") Update
+  .col-md-4.col-sm-4.col-lg-4
+  .col-md-4.col-sm-4.col-lg-4
+     h2(style='text-align:center') Edit Author
+     include ../partials/errMess
+     form(method="POST" action="/authors/" + author.id + "?_method=PUT")
+      include ./form_field
+      div(style='text-align:right')
+       a(href="/authors/" + author.id, style='text-decoration: none; padding: 0 5px; font-size: 16px;') Cancel
+       button.btn.btn-danger(type="submit") Update
+  .col-md-4.col-sm-4.col-lg-4   

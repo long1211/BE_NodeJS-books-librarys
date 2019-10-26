@@ -1,15 +1,27 @@
 extends ../layouts/layout
 
 block content
-  h2 Search Authors
-  form(action="/authors" method="GET")
-    label(for="name") Name
-    input(type="text" name="name" value=searchOptions.name)
-    button(type="submit") Search
-  br
-  each author in authors
-    div= author.name
-    a(href='/authors/'+ author.id) View
-    a(href='/authors/'+author.id +'/edit') Edit
-    include ../partials/deleteForm  
+ div.container
+  h2.search-author Search Authors
+  .col-md-4.col-sm-4.col-lg-4
+  .col-md-4.col-sm-4.col-lg-4
+   form(action="/authors" method="GET" class='form-search')
+    .col-xs-12
+     .form-group
+      label(for="name", style='font-size: 30px;') Name
+      input.form-control(style=' margin-bottom:15px', type="text" name="name" value=searchOptions.name)
+      button.btn_.btn.btn-success(type="submit") Search
+  .col-md-4.col-sm-4.col-lg-4    
+  .col-lg-12.col-sm-12.col-md-4
+   .col-sm-4.col-md-4.col-lg-4
+   .col-sm-4.col-md-4.col-lg-4
+    each author in authors
+     div.author 
+      div.name= author.name
+      br
+      div.view
+       a(href='/authors/'+ author.id, style='text-decoration: none; padding: 0 5px; font-size: 16px;') View
+       a(href='/authors/'+author.id +'/edit', style='text-decoration: none; padding: 0 5px; font-size: 16px;') Edit
+       include ../partials/deleteForm  
+   .col-sm-4.col-md-4.col-lg-4  
               

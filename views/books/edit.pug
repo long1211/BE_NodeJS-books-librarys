@@ -1,9 +1,10 @@
 extends ../layouts/layout
-
 block content
+ div.container
   include ../partials/errMess
-  h2 Edit Books
+  h2(style='font-size: 40px;') Edit Books
   form( action="/books/" + book.id + "?_method=PUT" method="POST")
      include ./form_field
-     a(href="/books") Cancel
-     button(type="submit") Update
+     div.flex-end
+        a(href="/books",style='text-decoration: none; padding: 0 5px; font-size: 16px;') Cancel
+        button.btn.btn-danger(type="submit") Update

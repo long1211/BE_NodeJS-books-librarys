@@ -1,9 +1,13 @@
 extends ../layouts/layout
 
 block content
-  h2 New Author
-  include ../partials/errMess
-  form(action="/authors" method="POST")
+  .col-md-4.col-sm-4.col-lg-4 
+  .col-md-4.col-sm-4.col-lg-4 
+   h2(style='text-align:center') New Author
+   include ../partials/errMess
+   form(action="/authors" method="POST")
      include ./form_field
-     a(href="/authors") Cancel
-     button(type="submit") Create
+     div(style='text-align:right')
+      a(href="/authors",style='text-decoration: none; padding: 0 5px; font-size: 16px;') Cancel
+      button.btn.btn-danger(type="submit") Create
+  .col-md-4.col-sm-4.col-lg-4    

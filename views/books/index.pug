@@ -1,19 +1,24 @@
 extends ../layouts/layout
 
 block content
-    h2 Search Book
-    form(action="/books" method="GET")
-      div 
+  div.container
+    h2(style='text-align:center;font-size: 35px;') Search Book
+    form.form-search(action="/books" method="GET")
+      div(style='margin-bottom: 10px') 
        label(for="title") Title 
-       input(type="text" name="title" value=searchOptions.title)
-      div
-       label(for="published-after") Published After 
-       input(type="date" name="publishedAfter" value=searchOptions.publishedAfter)
-      div
-       label(for="published-before") Published Before 
-       input(type="date" name="publishedBefore" value=searchOptions.publishedBefore)
-      button(type="submit") Search
-    div
+       input.form-control(placeholder="Title Book",type="text" name="title" value=searchOptions.title)
+      div.form-row
+       div.form-item
+        label(for="published-after") Published After 
+        input.form-control.form-( type="date" name="publishedAfter" value=searchOptions.publishedAfter)
+       div.form-item
+        label(for="published-before") Published Before 
+        input.form-control(type="date" name="publishedBefore" value=searchOptions.publishedBefore)
+      div._btn
+        button.btn.btn-primary(type="submit") Search
+    div.books
       each book in books
-       a(href='/books/'+book.id)
-        img( width='100px', height='150px',src=book.coverImgpath)
+       .col-md-3.col-sm-3.col-lg-3.col-xs-6.margin-top
+         a(href='/books/'+book.id style='text-decoration:none')
+           img( class='img',src=book.coverImgpath)
+           h2(style='color:#333')=book.title

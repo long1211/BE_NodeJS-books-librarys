@@ -1,11 +1,15 @@
 extends ../layouts/layout
 
 block content
-  h2= author.name
-  a(href='/authors/'+author.id +'/edit') Edit
-  include ../partials/deleteForm  
+ div.container
+  h2='Author: '+ author.name
+  div.edit_
+   a(href='/authors/'+author.id +'/edit', style='text-decoration: none; padding: 0 5px; font-size: 16px; display:flex') Edit
+   include ../partials/deleteForm  
   if booksByAuthor.length > 0
-   h2 Books By Author
+   h2(style='text-align:center; margin-bottom:30px') Books By Author
    each book in booksByAuthor
-    a(href='/books/'+book.id)
-      img(height='150' width='100' src=book.coverImgpath)
+     .col-md-3.col-sm-3.col-lg-3.col-xs-6
+        a(href='/books/'+book.id style='text-decoration:none')
+         img( class='img',src=book.coverImgpath)
+         h2(style='color:#333')=book.title

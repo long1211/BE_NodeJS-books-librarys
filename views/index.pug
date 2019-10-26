@@ -1,6 +1,9 @@
 extends layouts/layout
 block content
-   div
+   div.container
+      h2.text-center(style='font-size: 40px;margin-bottom: 30px') Recently Added 
       each book in books
-       a(href='/books/'+book.id)
-        img( width='100px', height='150px',src=book.coverImgpath)
+       .col-md-3.col-sm-3.col-lg-3.col-xs-6
+        a(href='/books/'+book.id style='text-decoration:none')
+         img( class='img',src=book.coverImgpath)
+         h2(style='color:#333')=book.title

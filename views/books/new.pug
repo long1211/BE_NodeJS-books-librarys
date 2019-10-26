@@ -1,8 +1,10 @@
 extends ../layouts/layout
 block content
-    h2 New Books
+   div.container
+    h2(style='font-size: 40px;') New Books
     include ../partials/errMess
     form(action="/books" method="POST" )
        include ./form_field
-       a(href="/books") Cancel
-       button(type="submit") Create
+       div.flex-end
+            a(href="/books",style='text-decoration: none; padding: 0 5px; font-size: 16px;') Cancel
+            button.btn.btn-danger(type="submit") Create
